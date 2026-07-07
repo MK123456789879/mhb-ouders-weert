@@ -1,10 +1,25 @@
-import { site } from "@/lib/content";
+import Agenda from "@/components/Agenda";
+import CommunityBand from "@/components/CommunityBand";
+import Footer from "@/components/Footer";
+import Hero from "@/components/Hero";
+import MissionVision from "@/components/MissionVision";
+import Nav from "@/components/Nav";
+import Pillars from "@/components/Pillars";
+import WhySection from "@/components/WhySection";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center px-6">
-      <p className="font-display text-3xl text-teal">{site.wordmark}</p>
-      <p className="mt-4 text-sage">Coming soon</p>
-    </main>
+    <>
+      <Nav />
+      <main>
+        <Hero />
+        <WhySection />
+        <MissionVision />
+        <Pillars />
+        <Agenda />
+        <CommunityBand />
+      </main>
+      <Footer />
+    </>
   );
 }
