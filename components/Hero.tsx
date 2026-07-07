@@ -1,18 +1,32 @@
-import HeroImage from "@/components/HeroImage";
+import ContentImage from "@/components/ContentImage";
 import { hero } from "@/lib/content";
 
 export default function Hero() {
   return (
-    <section className="mx-auto max-w-6xl px-6 py-16 md:py-24">
-      <div className="grid items-center gap-12 md:grid-cols-2 md:gap-16">
-        <div className="order-2 md:order-1">
-          <p className="label-text mb-6 text-sage">{hero.eyebrow}</p>
-          <h1>
+    <section className="relative min-h-[85vh] md:min-h-[70vh]">
+      <ContentImage
+        src={hero.heroImage.src}
+        alt={hero.heroImage.alt}
+        rounded={false}
+        priority
+        sizes="100vw"
+        className="absolute inset-0 h-full w-full"
+      />
+
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 bg-gradient-to-t from-ink/75 via-ink/35 to-ink/10"
+      />
+
+      <div className="relative z-10 flex min-h-[85vh] flex-col justify-end px-6 pb-12 pt-32 md:min-h-[70vh] md:pb-16 md:pt-40">
+        <div className="mx-auto w-full max-w-3xl">
+          <p className="label-text mb-4 text-cream/80">{hero.eyebrow}</p>
+          <h1 className="text-cream">
             {hero.h1.before}
             <em className="italic">{hero.h1.emphasis}</em>
             {hero.h1.after}
           </h1>
-          <p className="mt-6 max-w-lg text-ink/80">{hero.sub}</p>
+          <p className="mt-6 max-w-2xl text-lg text-cream/90">{hero.sub}</p>
           <div className="mt-10 flex flex-wrap gap-4">
             <a
               href={hero.ctas.primary.href}
@@ -24,18 +38,12 @@ export default function Hero() {
             </a>
             <a
               href={hero.ctas.secondary.href}
-              className="rounded-button border border-teal px-6 py-3 font-medium text-teal transition-colors hover:bg-teal-light"
+              className="rounded-button border border-cream/60 px-6 py-3 font-medium text-cream transition-colors hover:bg-cream/10"
             >
               {hero.ctas.secondary.label}
             </a>
           </div>
         </div>
-
-        <HeroImage
-          src={hero.heroImage.src}
-          alt={hero.heroImage.alt}
-          className="order-1 aspect-[4/5] w-full md:order-2 md:aspect-[3/4]"
-        />
       </div>
     </section>
   );

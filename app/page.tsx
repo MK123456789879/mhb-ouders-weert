@@ -2,9 +2,9 @@ import Agenda from "@/components/Agenda";
 import CommunityBand from "@/components/CommunityBand";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
+import MembershipSection from "@/components/MembershipSection";
 import MissionVision from "@/components/MissionVision";
 import Nav from "@/components/Nav";
-import Pillars from "@/components/Pillars";
 import WhySection from "@/components/WhySection";
 
 export default function Home() {
@@ -15,7 +15,7 @@ export default function Home() {
         <Hero />
         <WhySection />
         <MissionVision />
-        <Pillars />
+        <MembershipSection />
         <Agenda />
         <CommunityBand />
       </main>

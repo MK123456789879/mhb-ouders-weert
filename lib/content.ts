@@ -1,5 +1,5 @@
 export const WHATSAPP_INVITE =
-  "https://chat.whatsapp.com/REPLACE_WITH_INVITE_CODE";
+  "https://chat.whatsapp.com/GoUIdeTtTHgCQztLSbdbHk";
 
 export const site = {
   wordmark: "MHB Ouders Weert",
@@ -20,20 +20,20 @@ export const nav = {
 };
 
 export const hero = {
-  eyebrow: "VOOR OUDERS VAN HOOGBEGAAFDE KINDEREN · REGIO WEERT",
+  eyebrow: "HB OUDERS COMMUNITY · WEERT & NEDERWEERT",
   h1: {
-    before: "Een plek voor ",
-    emphasis: "hoogbegaafde",
-    after: " geesten.",
+    before: "Je hoeft dit niet ",
+    emphasis: "alléén",
+    after: " uit te zoeken.",
   },
-  sub: "Samen navigeren we door de mooie complexiteit van het opvoeden van intellectueel getalenteerde kinderen in de regio Weert en Nederweert.",
+  sub: "Voor (groot)ouders met een kind met een ontwikkelingsvoorsprong of kenmerken van hoogbegaafdheid. Stel vragen, deel ervaringen en vind passende activiteiten — samen met ouders uit jouw regio.",
   heroImage: {
     src: "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=1600&q=80&auto=format&fit=crop",
     alt: "Kind geconcentreerd bezig in zacht ochtendlicht",
   },
   ctas: {
-    primary: { label: "Sluit je aan", href: WHATSAPP_INVITE },
-    secondary: { label: "Ontdek wat we doen", href: "#over-ons" },
+    primary: { label: "Open de WhatsApp-community", href: WHATSAPP_INVITE },
+    secondary: { label: "Bekijk de agenda", href: "#agenda" },
   },
 };
 
@@ -57,40 +57,42 @@ export const missionVision = {
   },
 };
 
-export type PillarStatus = "live" | "soon";
-
-export const pillars = {
-  id: "wegwijzer",
-  h2: "Wat we doen",
-  items: [
+export const membership = {
+  id: "lid-worden",
+  h2: "Waarom lid worden?",
+  cards: [
     {
-      title: "Community",
+      title: "Stel je vraag",
       description:
-        "Direct contact met ouders die het herkennen, elke dag, in onze WhatsApp-groep.",
-      status: "live" as PillarStatus,
-      href: WHATSAPP_INVITE,
-      icon: "users" as const,
+        "Over school, begeleiding, diagnostiek of andere HB-gerelateerde vraagstukken.",
+      image: {
+        src: "https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=800&q=80&auto=format&fit=crop",
+        alt: "Ouder en kind in een warm, intiem gesprek",
+      },
     },
     {
-      title: "Agenda",
-      description: "Activiteiten en trajecten voor je kind, op één plek.",
-      status: "live" as PillarStatus,
-      href: "#agenda",
-      icon: "calendar" as const,
-    },
-    {
-      title: "Wegwijzer",
+      title: "Connect met peers",
       description:
-        "Overzicht van zorg en onderwijs in de regio die hoogbegaafdheid écht kennen.",
-      status: "soon" as PillarStatus,
-      icon: "compass" as const,
+        "Hoor hoe andere ouders trajecten met school, zorg of externe hulp hebben ervaren.",
+      image: {
+        src: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=800&q=80&auto=format&fit=crop",
+        alt: "Groep mensen in gesprek, warm en informeel",
+      },
     },
     {
-      title: "Onze chatbot",
-      description: "Laagdrempelig je vraag stellen, dag en nacht.",
-      status: "soon" as PillarStatus,
-      icon: "message-circle" as const,
+      title: "Gerichte HB-activiteiten",
+      description:
+        "Blijf op de hoogte van passende activiteiten voor kinderen en (groot)ouders.",
+      image: {
+        src: "https://images.unsplash.com/photo-1588075592446-265fd1a6f761?w=800&q=80&auto=format&fit=crop",
+        alt: "Kinderhanden bouwen met blokken in natuurlijk licht",
+      },
     },
+  ],
+  upcoming: [
+    { label: "Agenda", href: "#agenda", status: "live" as const },
+    { label: "HB Wegwijzer", status: "binnenkort" as const },
+    { label: "Onze chatbot", status: "binnenkort" as const },
   ],
 };
 
