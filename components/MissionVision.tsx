@@ -1,6 +1,9 @@
-import { missionVision } from "@/lib/content";
+"use client";
+
+import { useContent } from "@/lib/cms";
 
 export default function MissionVision() {
+  const { missionVision } = useContent();
   return (
     <section
       className="bg-white px-6 py-20 md:py-28"

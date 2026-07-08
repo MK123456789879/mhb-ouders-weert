@@ -1,6 +1,9 @@
-import { why } from "@/lib/content";
+"use client";
+
+import { useContent } from "@/lib/cms";
 
 export default function WhySection() {
+  const { why } = useContent();
   return (
     <section
       id={why.id}
@@ -12,8 +15,8 @@ export default function WhySection() {
           {why.h2}
         </h2>
         <div className="mt-8 space-y-6 text-ink/85">
-          {why.paragraphs.map((paragraph) => (
-            <p key={paragraph.slice(0, 24)}>{paragraph}</p>
+          {why.paragraphs.map((paragraph, index) => (
+            <p key={index}>{paragraph}</p>
           ))}
         </div>
       </div>

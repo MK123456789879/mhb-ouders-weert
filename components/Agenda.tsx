@@ -1,6 +1,9 @@
-import { agenda } from "@/lib/content";
+"use client";
+
+import { useContent } from "@/lib/cms";
 
 export default function Agenda() {
+  const { agenda } = useContent();
   return (
     <section
       id={agenda.id}
@@ -15,11 +18,13 @@ export default function Agenda() {
 
         <div className="mt-12 space-y-8">
           <div>
-            <h3 className="label-text mb-4 text-sage">Losse activiteiten</h3>
+            <h3 className="label-text mb-4 text-sage">
+              {agenda.activitiesLabel}
+            </h3>
             <div className="grid gap-4 sm:grid-cols-2">
-              {agenda.activities.map((activity) => (
+              {agenda.activities.map((activity, index) => (
                 <article
-                  key={`${activity.date}-${activity.title}`}
+                  key={`${activity.date}-${activity.title}-${index}`}
                   className="rounded-card border border-teal-light bg-cream p-6 shadow-soft"
                 >
                   <p className="label-text text-teal">{activity.date}</p>
@@ -27,7 +32,9 @@ export default function Agenda() {
                     {activity.title}
                   </h4>
                   <p className="mt-2 text-sm text-sage">
-                    {[activity.age, activity.location].filter(Boolean).join(" · ")}
+                    {[activity.age, activity.location]
+                      .filter(Boolean)
+                      .join(" · ")}
                   </p>
                 </article>
               ))}
@@ -35,11 +42,13 @@ export default function Agenda() {
           </div>
 
           <div>
-            <h3 className="label-text mb-4 text-sage">Trajecten & reeksen</h3>
+            <h3 className="label-text mb-4 text-sage">
+              {agenda.trajectoriesLabel}
+            </h3>
             <div className="grid gap-4 sm:grid-cols-2">
-              {agenda.trajectories.map((trajectory) => (
+              {agenda.trajectories.map((trajectory, index) => (
                 <article
-                  key={trajectory.title}
+                  key={`${trajectory.title}-${index}`}
                   className="rounded-card border border-teal-light border-l-4 border-l-teal bg-teal-light/50 p-6 shadow-soft"
                 >
                   <span className="label-text inline-block rounded-full bg-teal/10 px-3 py-1 text-teal">

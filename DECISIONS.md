@@ -23,7 +23,7 @@ Documentatie van keuzes die zijn gemaakt tijdens het bouwen van dit prototype, i
 
 | Plaats | Foto | Query |
 |--------|------|-------|
-| Hero | `photo-1503454537195` | child concentration, morning light |
+| Hero | `premium_photo-1663040460452` (plus.unsplash.com) | twee meisjes, warm, energiek — door Marten gekozen |
 | Stel je vraag | `photo-1516627145497` | parent-child conversation |
 | Connect met peers | `photo-1529156069898` | group conversation |
 | HB-activiteiten | `photo-1588075592446` | kids hands, building blocks |
@@ -40,9 +40,18 @@ Fallback bij laadfout: teal→cream gradient met mini doodle-overlay (`ContentIm
 
 - Vercel staat op privé-account (`mk123456789879` / team `marten-kopps-projects`), gekoppeld aan privé GitHub `MK123456789879/mhb-ouders-weert`.
 
+## Dummy CMS (demo)
+
+- **Route:** `/admin` — bereikbaar via subtiele link "Beheer (demo)" in de footer.
+- **Login:** dummy-auth, geen echte beveiliging. Demo: `demo` / `mhb2026`.
+- **Opslag:** `localStorage` in de browser — wijzigingen blijven staan na refresh, per apparaat/browser.
+- **Reset-knop** in admin zet alles terug naar `defaultContent` uit `lib/content.ts`.
+- **Scope:** alle secties bewerkbaar (hero, waarom, missie/visie, lid-worden-kaarten, agenda, community, footer, WhatsApp-link).
+- **Architectuur:** `CmsProvider` in layout → `useContent()` in publieke componenten. Geen backend, geen database.
+
 ## Buiten scope (bewust niet gebouwd)
 
-- Auth, database, backend
+- Echte auth of server-side opslag
+- Database of headless CMS-integratie
 - Extra pagina's (Wegwijzer-detail, chatbot)
-- Browser storage
 - shadcn of andere UI-libraries

@@ -1,12 +1,15 @@
+"use client";
+
 import ContentImage from "@/components/ContentImage";
-import { hero } from "@/lib/content";
+import { useContent } from "@/lib/cms";
 
 export default function Hero() {
+  const { hero, whatsappInvite } = useContent();
   return (
     <section className="relative min-h-[85vh] md:min-h-[70vh]">
       <ContentImage
-        src={hero.heroImage.src}
-        alt={hero.heroImage.alt}
+        src={hero.image.src}
+        alt={hero.image.alt}
         rounded={false}
         priority
         sizes="100vw"
@@ -29,18 +32,18 @@ export default function Hero() {
           <p className="mt-6 max-w-2xl text-lg text-cream/90">{hero.sub}</p>
           <div className="mt-10 flex flex-wrap gap-4">
             <a
-              href={hero.ctas.primary.href}
+              href={whatsappInvite}
               target="_blank"
               rel="noopener noreferrer"
               className="rounded-button bg-coral px-6 py-3 font-medium text-white transition-colors hover:bg-coral/90"
             >
-              {hero.ctas.primary.label}
+              {hero.primaryCtaLabel}
             </a>
             <a
-              href={hero.ctas.secondary.href}
+              href={hero.secondaryCtaHref}
               className="rounded-button border border-cream/60 px-6 py-3 font-medium text-cream transition-colors hover:bg-cream/10"
             >
-              {hero.ctas.secondary.label}
+              {hero.secondaryCtaLabel}
             </a>
           </div>
         </div>

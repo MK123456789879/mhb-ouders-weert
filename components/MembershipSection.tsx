@@ -1,7 +1,10 @@
+"use client";
+
 import ContentImage from "@/components/ContentImage";
-import { membership } from "@/lib/content";
+import { useContent } from "@/lib/cms";
 
 export default function MembershipSection() {
+  const { membership } = useContent();
   return (
     <section
       id={membership.id}
